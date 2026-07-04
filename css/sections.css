@@ -227,7 +227,7 @@ section{ position:relative; }
   .grid{ grid-template-columns:repeat(3, 1fr); }
 }
 @media (max-width:860px){
-  .nav-links, .nav-cta .btn-ghost{ display:none; }
+  .nav-links{ display:none; }
   .menu-toggle{ display:inline-flex; }
 
   .nav-links.open{
