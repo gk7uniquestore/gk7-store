@@ -210,6 +210,15 @@ section{ position:relative; }
   font-size:.72rem;
   letter-spacing:.08em;
 }
+.footer-credit{
+  margin-top:8px;
+  text-align:center;
+  color:var(--faint);
+  opacity:.65;
+  font-family:var(--f-label);
+  font-size:.68rem;
+  letter-spacing:.1em;
+}
 
 /* ============================================================
    Responsive
