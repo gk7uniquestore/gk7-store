@@ -1,0 +1,255 @@
+/* ============================================================
+   GK7 Unique Store — Components
+   Buttons, header/nav, tiles, reviews, trust bar.
+   ============================================================ */
+
+/* ---- Buttons ---- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.55em;
+  padding:.85em 1.5em;
+  border-radius:999px;
+  font-family:var(--f-body);
+  font-weight:600;
+  font-size:.95rem;
+  letter-spacing:.02em;
+  border:1px solid var(--line);
+  transition:transform .2s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+.btn:hover{ transform:translateY(-2px); }
+
+.btn-primary{
+  color:#20160a;
+  background:linear-gradient(180deg, var(--gold-2), var(--gold) 55%, var(--gold-deep));
+  border-color:transparent;
+  box-shadow:0 10px 26px rgba(201,162,75,.28);
+}
+.btn-primary:hover{ box-shadow:0 14px 34px rgba(201,162,75,.4); }
+
+.btn-ghost{
+  color:var(--cream);
+  background:rgba(255,255,255,.02);
+}
+.btn-ghost:hover{ border-color:var(--gold); color:var(--gold-2); }
+
+/* WhatsApp button flavour */
+.wa svg{ width:1.15em; height:1.15em; }
+
+/* ---- Header / Nav ---- */
+.site-header{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+  border-bottom:1px solid transparent;
+}
+.site-header.solid{
+  background:rgba(13,10,6,.82);
+  backdrop-filter:blur(12px);
+  border-bottom-color:var(--line-2);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding-block:16px;
+}
+.brand{
+  font-family:var(--f-display);
+  font-weight:700;
+  font-size:1.15rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:.55em;
+}
+.brand .mark{
+  display:grid;
+  place-items:center;
+  width:34px; height:34px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, var(--surface-2), var(--surface));
+  font-size:.85rem;
+  color:var(--gold-2);
+}
+/* Brand logo image (green-on-black) — screen blend drops the black box */
+.brand-logo{
+  height:44px;
+  width:auto;
+  display:block;
+  mix-blend-mode:screen;
+}
+.site-footer .brand-logo{ height:50px; }
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.nav-links a{
+  font-family:var(--f-label);
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  transition:color .2s ease;
+}
+.nav-links a:hover{ color:var(--gold-2); }
+
+.nav-cta{ display:flex; align-items:center; gap:12px; }
+
+.menu-toggle{
+  display:none;
+  width:44px; height:44px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  align-items:center;
+  justify-content:center;
+}
+.menu-toggle span{
+  position:relative;
+  width:20px; height:2px; background:var(--cream);
+  transition:transform .25s ease, opacity .25s ease;
+}
+.menu-toggle span::before,.menu-toggle span::after{
+  content:""; position:absolute; left:0; width:20px; height:2px; background:var(--cream);
+  transition:transform .25s ease;
+}
+.menu-toggle span::before{ top:-6px; }
+.menu-toggle span::after{ top:6px; }
+.menu-toggle[aria-expanded="true"] span{ background:transparent; }
+.menu-toggle[aria-expanded="true"] span::before{ transform:translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span::after{ transform:translateY(-6px) rotate(-45deg); }
+
+/* ---- Product tile ---- */
+.tile{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(180deg, var(--surface), var(--bg2));
+  border:1px solid var(--line-2);
+  border-radius:var(--r);
+  overflow:hidden;
+  transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.tile:hover{
+  transform:translateY(-6px);
+  border-color:var(--line);
+  box-shadow:var(--shadow);
+}
+.tile-media{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:var(--surface-2);
+}
+.tile-media img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+.tile:hover .tile-media img{ transform:scale(1.06); }
+.tile-body{
+  padding:18px 18px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  flex:1;
+}
+.tile-name{
+  font-family:var(--f-display);
+  font-size:1.02rem;
+  font-weight:600;
+  letter-spacing:.03em;
+  color:var(--cream);
+}
+.tile-tag{
+  font-family:var(--f-accent);
+  font-style:italic;
+  font-size:1rem;
+  color:var(--muted);
+}
+.tile-price{
+  font-family:var(--f-label);
+  font-size:.82rem;
+  color:var(--gold-2);
+  margin-top:2px;
+}
+.tile-cta{ margin-top:auto; padding-top:14px; }
+.tile-cta .btn{ width:100%; justify-content:center; }
+
+/* ---- Badge (Bestseller etc.) ---- */
+.badge{
+  position:absolute;
+  top:12px; left:12px;
+  z-index:2;
+  font-family:var(--f-label);
+  font-size:.62rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#20160a;
+  background:linear-gradient(180deg, var(--gold-2), var(--gold) 55%, var(--gold-deep));
+  padding:.42em .8em;
+  border-radius:999px;
+  box-shadow:0 6px 16px rgba(0,0,0,.4);
+}
+
+/* ---- Reviews ---- */
+.rev{
+  background:linear-gradient(180deg, var(--surface), var(--bg2));
+  border:1px solid var(--line-2);
+  border-radius:var(--r);
+  padding:26px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  height:100%;
+}
+.rev-head{ display:flex; align-items:center; gap:14px; }
+.rev-avatar{
+  display:grid; place-items:center;
+  width:46px; height:46px;
+  border-radius:50%;
+  font-family:var(--f-display);
+  font-weight:700;
+  color:#20160a;
+  background:linear-gradient(180deg, var(--gold-2), var(--gold-deep));
+}
+.rev-name{ font-weight:600; color:var(--cream); }
+.rev-stars{ color:var(--gold); letter-spacing:2px; font-size:.9rem; }
+.rev-title{
+  font-family:var(--f-display);
+  font-size:.98rem;
+  font-weight:600;
+  color:var(--gold-2);
+  letter-spacing:.02em;
+}
+.rev-body{ color:var(--muted); font-size:.97rem; }
+
+/* ---- Trust bar ---- */
+.trust{
+  border-top:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+  background:rgba(255,255,255,.015);
+}
+.trust-inner{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 40px;
+  justify-content:center;
+  padding-block:18px;
+}
+.trust-item{
+  font-family:var(--f-label);
+  font-size:.74rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.trust-item::before{ content:"✦"; color:var(--gold); }

@@ -1,0 +1,29 @@
+/* ============================================================
+   GK7 Unique Store — Design Tokens
+   Single source of truth for brand colors, fonts, radii.
+   Change the look of the whole site here.
+   ============================================================ */
+:root{
+  /* surfaces */
+  --bg:#0D0A06; --bg2:#14100A; --surface:#1A140D; --surface-2:#221A10;
+  /* gold */
+  --gold:#C9A24B; --gold-2:#E9D3A0; --gold-deep:#8A6520;
+  /* text */
+  --cream:#EFE7D6; --muted:#A99C82; --faint:#7C7059;
+  /* accent (Purple Oud) */
+  --purple:#8A5CC0; --purple-bg:#221338;
+  /* lines */
+  --line:rgba(201,162,75,.22); --line-2:rgba(201,162,75,.12);
+  /* system */
+  --maxw:1220px; --r:16px;
+
+  /* type families */
+  --f-display:"Cinzel", serif;
+  --f-accent:"Cormorant Garamond", serif;
+  --f-body:"Inter", system-ui, -apple-system, sans-serif;
+  --f-label:"IBM Plex Mono", ui-monospace, monospace;
+
+  /* elevation */
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+  --shadow-soft:0 10px 30px rgba(0,0,0,.35);
+}

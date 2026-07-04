@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Dependencies / build (only if you later add the Vite path)
+node_modules/
+dist/
+.cache/
+
+# Logs & env
+*.log
+.env
+.env.*
