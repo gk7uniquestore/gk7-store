@@ -181,6 +181,14 @@
 .tile-cta{ margin-top:auto; padding-top:14px; }
 .tile-cta .btn{ width:100%; justify-content:center; }
 
+/* ---- Header WhatsApp CTA: full label on desktop, icon-only on phones ---- */
+.wa-cta .wa-glyph{ width:1.15em; height:1.15em; flex:0 0 auto; }
+@media (max-width:600px){
+  .wa-cta .wa-label{ display:none; }         /* icon-only button on phones */
+  .wa-cta{ padding:.7em; gap:0; }
+  .nav-cta{ gap:8px; }
+}
+
 /* ---- Badge (Bestseller etc.) ---- */
 .badge{
   position:absolute;

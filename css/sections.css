@@ -253,6 +253,10 @@ section{ position:relative; }
   .why-grid{ grid-template-columns:1fr; }
   .grid{ grid-template-columns:repeat(2, 1fr); }
 }
+@media (max-width:640px){
+  /* text-heavy review cards read better one-per-row on phones */
+  [data-grid="reviews"]{ grid-template-columns:1fr; }
+}
 @media (max-width:520px){
   .grid{ grid-template-columns:1fr 1fr; }
   .notes{ grid-template-columns:1fr; }
